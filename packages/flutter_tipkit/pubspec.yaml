@@ -1,0 +1,29 @@
+name: flutter_tipkit
+description: >-
+  Contextual feature tips for Flutter: rules, parameters, events, display
+  frequency, tip groups, inline and popover tips, with a pluggable datastore.
+version: 0.1.0
+repository: https://github.com/poopieapp/flutter_tipkit/tree/main/packages/flutter_tipkit
+issue_tracker: https://github.com/poopieapp/flutter_tipkit/issues
+resolution: workspace
+
+topics:
+  - tips
+  - onboarding
+  - tutorial
+  - popover
+  - tooltip
+
+environment:
+  sdk: ^3.9.0
+  flutter: ">=3.35.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  fake_async: ^1.3.0
+  flutter_test:
+    sdk: flutter
+  very_good_analysis: ^11.0.0

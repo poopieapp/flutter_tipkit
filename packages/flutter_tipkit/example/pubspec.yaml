@@ -1,0 +1,20 @@
+name: flutter_tipkit_example
+description: Shows the tips of flutter_tipkit.
+publish_to: none
+resolution: workspace
+
+environment:
+  sdk: ^3.9.0
+  flutter: ">=3.35.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_tipkit:
+    path: ../
+
+dev_dependencies:
+  very_good_analysis: ^11.0.0
+
+flutter:
+  uses-material-design: true

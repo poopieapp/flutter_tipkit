@@ -1,0 +1,29 @@
+name: flutter_tipkit_shared_preferences
+description: >-
+  A shared_preferences datastore for flutter_tipkit, so tip state survives app
+  restarts.
+version: 0.1.0
+repository: https://github.com/poopieapp/flutter_tipkit/tree/main/packages/flutter_tipkit_shared_preferences
+issue_tracker: https://github.com/poopieapp/flutter_tipkit/issues
+resolution: workspace
+
+topics:
+  - tips
+  - onboarding
+  - shared-preferences
+
+environment:
+  sdk: ^3.9.0
+  flutter: ">=3.35.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_tipkit: ^0.1.0
+  shared_preferences: ^2.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  shared_preferences_platform_interface: ^2.4.0
+  very_good_analysis: ^11.0.0
