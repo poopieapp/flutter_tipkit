@@ -64,7 +64,9 @@ mixin TipDisplayStateMixin<T extends StatefulWidget> on State<T> {
         (ModalRoute.isCurrentOf(context) ?? true);
     if (isVisible == _isHostVisible) return;
     _isHostVisible = isVisible;
-    scheduleTipSync();
+    // The view's own didChangeDependencies may still be setting up what
+    // syncTipDisplay needs, so wait for the frame.
+    _syncAfterFrame();
   }
 
   /// Calls [syncTipDisplay] now, or after the current frame while building.
@@ -73,23 +75,33 @@ mixin TipDisplayStateMixin<T extends StatefulWidget> on State<T> {
     final isBuilding =
         phase == SchedulerPhase.persistentCallbacks ||
         phase == SchedulerPhase.midFrameMicrotasks;
-    if (!isBuilding) {
+    if (!isBuilding && !_isSyncScheduled) {
       if (mounted) syncTipDisplay();
       return;
     }
+    _syncAfterFrame();
+  }
+
+  void _syncAfterFrame() {
     if (_isSyncScheduled) return;
     _isSyncScheduled = true;
-    SchedulerBinding.instance.addPostFrameCallback((_) {
-      _isSyncScheduled = false;
-      if (mounted) syncTipDisplay();
-    });
+    SchedulerBinding.instance
+      ..addPostFrameCallback((_) {
+        _isSyncScheduled = false;
+        if (mounted) syncTipDisplay();
+      })
+      // A view can be created outside a frame, as by runApp.
+      ..ensureVisualUpdate();
   }
 
   @override
   void initState() {
     super.initState();
     Tips.center.addListener(scheduleTipSync);
-    scheduleTipSync();
+    // Not now: the view has not read its dependencies, such as the theme,
+    // yet. Mounting outside a frame, as runApp does, would otherwise sync
+    // before them.
+    _syncAfterFrame();
   }
 
   @override
