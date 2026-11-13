@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_tipkit/flutter_tipkit.dart';
 import 'package:flutter_tipkit_example/chapters/basics.dart';
 import 'package:flutter_tipkit_example/chapters/flow.dart';
@@ -7,6 +6,7 @@ import 'package:flutter_tipkit_example/chapters/rules.dart';
 import 'package:flutter_tipkit_example/demo_page.dart';
 import 'package:flutter_tipkit_example/inspector.dart';
 import 'package:flutter_tipkit_example/tips.dart';
+import 'package:material_ui/material_ui.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,15 +16,41 @@ Future<void> main() async {
   runApp(const DemoApp());
 }
 
+/// Shows the new page right away, without animating it in.
+class _NoPageTransition extends PageTransitionsBuilder {
+  const new();
+
+  @override
+  Widget buildTransitions<T>(
+    PageRoute<T> route,
+    BuildContext context,
+    Animation<double> animation,
+    Animation<double> secondaryAnimation,
+    Widget child,
+  ) {
+    return child;
+  }
+}
+
 class DemoApp extends StatelessWidget {
-  const DemoApp({super.key});
+  const new({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'flutter_tipkit demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(colorSchemeSeed: Colors.indigo),
+      theme: ThemeData(
+        colorSchemeSeed: Colors.indigo,
+        // Pages switch at once: a sliding page would only distract from
+        // the tips.
+        pageTransitionsTheme: PageTransitionsTheme(
+          builders: {
+            for (final platform in TargetPlatform.values)
+              platform: const _NoPageTransition(),
+          },
+        ),
+      ),
       builder: (context, child) {
         final colors = Theme.of(context).colorScheme;
         return ColoredBox(
@@ -56,7 +82,7 @@ class DemoApp extends StatelessWidget {
 
 /// A chapter in the menu.
 class _Chapter {
-  const _Chapter(this.title, this.subtitle, this.page);
+  const new(this.title, this.subtitle, this.page);
 
   final String title;
   final String subtitle;
@@ -121,7 +147,7 @@ const _sections = <(String, List<_Chapter>)>[
 ];
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  const new({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_tipkit/flutter_tipkit.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// The latest tip events, newest first, fed by `Tips.configure(onEvent:)`.
 final eventLog = ValueNotifier<List<String>>(const []);
@@ -25,7 +25,7 @@ Future<void> resetDemo() async {
 
 /// One chapter of the demo: what it shows, the demo itself, and its code.
 class DemoPage extends StatelessWidget {
-  const DemoPage({
+  const new({
     required this.title,
     required this.description,
     required this.demo,
@@ -67,7 +67,7 @@ class DemoPage extends StatelessWidget {
 
 /// Starts every tip over.
 class ResetButton extends StatelessWidget {
-  const ResetButton({super.key});
+  const new({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +89,7 @@ class ResetButton extends StatelessWidget {
 
 /// Source code, in a monospace box that scrolls sideways.
 class CodeBlock extends StatelessWidget {
-  const CodeBlock(this.code, {super.key});
+  const new(this.code, {super.key});
 
   final String code;
 
@@ -120,7 +120,7 @@ class CodeBlock extends StatelessWidget {
 
 /// The latest [eventLog] lines.
 class EventLogView extends StatelessWidget {
-  const EventLogView({this.maxLines, super.key});
+  const new({this.maxLines, super.key});
 
   /// How many lines to show; all of them when null.
   final int? maxLines;

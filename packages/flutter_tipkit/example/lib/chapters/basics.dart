@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_tipkit/flutter_tipkit.dart';
 import 'package:flutter_tipkit_example/demo_page.dart';
 import 'package:flutter_tipkit_example/tips.dart';
+import 'package:material_ui/material_ui.dart';
 
 class InlineChapter extends StatelessWidget {
-  const InlineChapter({super.key});
+  const new({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,7 @@ const TipWidget(tip: WelcomeTip());
 }
 
 class PopoverChapter extends StatelessWidget {
-  const PopoverChapter({super.key});
+  const new({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -96,7 +96,7 @@ PopoverTipWidget(
 }
 
 class ActionsChapter extends StatelessWidget {
-  const ActionsChapter({super.key});
+  const new({super.key});
 
   @override
   Widget build(BuildContext context) {

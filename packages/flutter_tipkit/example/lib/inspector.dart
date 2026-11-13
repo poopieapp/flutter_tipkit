@@ -1,11 +1,11 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_tipkit/flutter_tipkit.dart';
 import 'package:flutter_tipkit_example/demo_page.dart';
 import 'package:flutter_tipkit_example/tips.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// Every tip's status and the event log, live.
 class InspectorScreen extends StatelessWidget {
-  const InspectorScreen({super.key});
+  const new({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +50,7 @@ class InspectorScreen extends StatelessWidget {
 }
 
 class _StatusChip extends StatelessWidget {
-  const _StatusChip({required this.status});
+  const new({required this.status});
 
   final TipStatus status;
 
@@ -64,10 +64,8 @@ class _StatusChip extends StatelessWidget {
     };
     return Text(
       label,
-      style: Theme.of(context).textTheme.labelMedium?.copyWith(
-        color: color,
-        fontWeight: FontWeight.w600,
-      ),
+      style: Theme.of(context).textTheme.labelMedium
+          ?.copyWith(color: color, fontWeight: FontWeight.w600),
     );
   }
 }

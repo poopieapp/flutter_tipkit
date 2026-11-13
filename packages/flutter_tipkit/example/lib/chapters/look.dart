@@ -1,12 +1,12 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_tipkit/flutter_tipkit.dart';
 import 'package:flutter_tipkit_example/demo_page.dart';
 import 'package:flutter_tipkit_example/tips.dart';
+import 'package:material_ui/material_ui.dart';
 
 enum _Style { plain, styled, custom }
 
 class ThemingChapter extends StatefulWidget {
-  const ThemingChapter({super.key});
+  const new({super.key});
 
   @override
   State<ThemingChapter> createState() => _ThemingChapterState();
@@ -110,7 +110,7 @@ TipTheme(
 
 /// A card of the app's own, from the tip's details.
 class _CustomCard extends StatelessWidget {
-  const _CustomCard({required this.details});
+  const new({required this.details});
 
   final TipCardDetails details;
 

@@ -1,12 +1,12 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
 import 'package:flutter_tipkit/flutter_tipkit.dart';
 import 'package:flutter_tipkit_example/demo_page.dart';
 import 'package:flutter_tipkit_example/tips.dart';
+import 'package:material_ui/material_ui.dart';
 
 class TourChapter extends StatelessWidget {
-  const TourChapter({super.key});
+  const new({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +65,7 @@ PopoverTipWidget(tip: const TourAddTip(), group: tour, child: addButton);
 }
 
 class LimitChapter extends StatelessWidget {
-  const LimitChapter({super.key});
+  const new({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -88,7 +88,7 @@ await Tips.configure(displayFrequency: TipDisplayFrequency.daily);
 }
 
 class SuppressChapter extends StatefulWidget {
-  const SuppressChapter({super.key});
+  const new({super.key});
 
   @override
   State<SuppressChapter> createState() => _SuppressChapterState();

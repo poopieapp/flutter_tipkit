@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_tipkit/flutter_tipkit.dart';
 import 'package:flutter_tipkit_example/demo_page.dart';
 import 'package:flutter_tipkit_example/tips.dart';
+import 'package:material_ui/material_ui.dart';
 
 class EventChapter extends StatelessWidget {
-  const EventChapter({super.key});
+  const new({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +53,7 @@ List<TipRule> get rules => [
 }
 
 class ParameterChapter extends StatelessWidget {
-  const ParameterChapter({super.key});
+  const new({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +95,7 @@ TipRule.parameter(isSignedIn, (signedIn) => signedIn);
 }
 
 class TimingChapter extends StatelessWidget {
-  const TimingChapter({super.key});
+  const new({super.key});
 
   @override
   Widget build(BuildContext context) {

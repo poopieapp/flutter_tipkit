@@ -7,7 +7,7 @@ import 'package:flutter_tipkit/flutter_tipkit.dart';
 
 /// The simplest tip: an id and a text, no rules.
 class WelcomeTip extends Tip {
-  const WelcomeTip();
+  const new();
 
   @override
   String get id => 'welcome';
@@ -21,7 +21,7 @@ class WelcomeTip extends Tip {
 
 /// A popover on the share button.
 class ShareTip extends Tip {
-  const ShareTip();
+  const new();
 
   @override
   String get id => 'share';
@@ -35,7 +35,7 @@ class ShareTip extends Tip {
 
 /// A popover on the search button, waiting for the share tip.
 class SearchTip extends Tip {
-  const SearchTip();
+  const new();
 
   @override
   String get id => 'search';
@@ -49,7 +49,7 @@ class SearchTip extends Tip {
 
 /// A popover on the filter button, waiting for the search tip.
 class FilterTip extends Tip {
-  const FilterTip();
+  const new();
 
   @override
   String get id => 'filter';
@@ -63,7 +63,7 @@ class FilterTip extends Tip {
 
 /// A tip with two actions: one keeps the tip, the other ends it.
 class ActionsTip extends Tip {
-  const ActionsTip();
+  const new();
 
   @override
   String get id => 'actions';
@@ -86,7 +86,7 @@ const liked = TipEvent('liked');
 
 /// Shows after three likes.
 class SaveTip extends Tip {
-  const SaveTip();
+  const new();
 
   @override
   String get id => 'save';
@@ -109,7 +109,7 @@ const isSignedIn = TipParameter<bool>('isSignedIn', false);
 
 /// Shows while signed out.
 class SignInTip extends Tip {
-  const SignInTip();
+  const new();
 
   @override
   String get id => 'signIn';
@@ -128,7 +128,7 @@ class SignInTip extends Tip {
 
 /// Shows while signed in.
 class SyncTip extends Tip {
-  const SyncTip();
+  const new();
 
   @override
   String get id => 'sync';
@@ -147,7 +147,7 @@ class SyncTip extends Tip {
 
 /// The first of two tips, some time apart.
 class FirstStepTip extends Tip {
-  const FirstStepTip();
+  const new();
 
   @override
   String get id => 'firstStep';
@@ -162,7 +162,7 @@ class FirstStepTip extends Tip {
 
 /// Five seconds after the first step ends.
 class FollowUpTip extends Tip {
-  const FollowUpTip();
+  const new();
 
   @override
   String get id => 'followUp';
@@ -188,7 +188,7 @@ class FollowUpTip extends Tip {
 
 /// The first step of the tour, inline.
 class TourStartTip extends Tip {
-  const TourStartTip();
+  const new();
 
   @override
   String get id => 'tourStart';
@@ -203,7 +203,7 @@ class TourStartTip extends Tip {
 
 /// The second step of the tour, on the search button.
 class TourSearchTip extends Tip {
-  const TourSearchTip();
+  const new();
 
   @override
   String get id => 'tourSearch';
@@ -218,7 +218,7 @@ class TourSearchTip extends Tip {
 
 /// The last step of the tour, on the add button.
 class TourAddTip extends Tip {
-  const TourAddTip();
+  const new();
 
   @override
   String get id => 'tourAdd';
@@ -236,7 +236,7 @@ const tour = TipGroup.ordered([TourStartTip(), TourSearchTip(), TourAddTip()]);
 
 /// Goes away by itself after three displays.
 class LimitedTip extends Tip {
-  const LimitedTip();
+  const new();
 
   @override
   String get id => 'limited';
@@ -255,7 +255,7 @@ class LimitedTip extends Tip {
 
 /// Hidden for a while by the suppress button.
 class SuppressedTip extends Tip {
-  const SuppressedTip();
+  const new();
 
   @override
   String get id => 'suppressed';
@@ -273,7 +273,7 @@ class SuppressedTip extends Tip {
 
 /// An inline tip in the theming page.
 class ThemedInlineTip extends Tip {
-  const ThemedInlineTip();
+  const new();
 
   @override
   String get id => 'themedInline';
@@ -288,7 +288,7 @@ class ThemedInlineTip extends Tip {
 
 /// A popover in the theming page.
 class ThemedPopoverTip extends Tip {
-  const ThemedPopoverTip();
+  const new();
 
   @override
   String get id => 'themedPopover';
@@ -302,7 +302,7 @@ class ThemedPopoverTip extends Tip {
 
 /// Points at the inspector from the home screen.
 class InspectorTip extends Tip {
-  const InspectorTip();
+  const new();
 
   @override
   String get id => 'inspector';
